@@ -19,18 +19,28 @@ int main()
         dist=usensor.get_dist_cm();    //Measured distance is recorded from sensor
         //long dist1 = (long) dist;
         lcd.cls();              //Clears LCD screen
-        lcd.locate(0,0);    //Sets cursor on 0,0 position on the LCD screen
+         
+
         a = (( dist * 100 ) / 30 )  ;
-        b = 100 - a ;      
+        b = 100 - a ;   
+           
         if(dist <=30)           //Checks if measured distance is less than or equal to 30
-        lcd.printf("Distance : %ldcm",dist); 
-        lcd.locate(0,1); 
-        lcd.printf("garbage  : %ld%%",b);
-        if ( dist > 30 )
-        lcd.printf(" no data ");    //Prints " no data " on the LCD screen 
-        //a = 100 - dist ;
+        {     
+            lcd.cls();          //Clears LCD screen
+            lcd.locate(0,0);    //Sets cursor on 0,0 position on the LCD screen
+            lcd.printf("Smart Bin");           
+            lcd.locate(0,1); 
+            lcd.printf("garbage  : %ld%%",b);
+        }
         
-        //Prints the distance on the LCD screen
+        if ( dist > 30 )
+        {
+            lcd.cls(); 
+            lcd.locate(0,0);    //Sets cursor on 0,0 position on the LCD screen
+            lcd.printf("Smart Bin");
+            lcd.locate(0,1); 
+            lcd.printf(" no data ");
+         }
         
     }
 }
