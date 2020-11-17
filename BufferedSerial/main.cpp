@@ -52,21 +52,21 @@ int main()
             SIM800L.printf("\r\n");
             wait(0.1f);
 
-            SIM800L.printf("AT+CMGF=1");
+            SIM800L.printf("AT+CMGF=1");//confg text mode
             SIM800L.printf("\r\n");
             wait(0.1f);
 
-            SIM800L.printf("AT+CMGS=\"+16475812594\"");
+            SIM800L.printf("AT+CMGS=\"+16475812594\"");// connected and send text to number
             SIM800L.printf("\r\n");
             wait(0.1f);
 
-            SIM800L.printf("4410, keele street , M2N 2Y5, BIN4-10 Garbage bin- 70%");
+            SIM800L.printf("4410, keele street , M2N 2Y5, BIN4-10 Garbage bin- 70%");// gsm sending text to number
             SIM800L.printf("\r\n");
             wait(0.1f);
             wait_ms(500);
         }
 
-        while(pc.readable()) {
+        while(pc.readable()) {  // continous read the distance if less
             SIM800L.putc(pc.getc());
             SIM800L.printf("%c", SIM800L.putc(pc.getc()));
             SIM800L.printf("\r\n");
