@@ -47,7 +47,7 @@ int main()
             lcd.locate(0,1);
             lcd.printf(" no data ");
         }
-        if(dist<15) {
+        if(dist<8) { // distance is set 70%
             SIM800L.printf("AT");
             SIM800L.printf("\r\n");
             wait(0.1f);
