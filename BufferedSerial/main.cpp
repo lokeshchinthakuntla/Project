@@ -8,8 +8,8 @@
 HCSR04  usensor(p9,p10);//allocating the lpc pins for the ultrasonic sensor
 //rs, e, d4-d7 using lpc pins for interfacing with LCD16X2 to display required text on
 TextLCD lcd(p19, p20, p21, p22, p23, p24,TextLCD::LCD16x2);
-Serial pc(p28, p27);
-Serial SIM800L(p13, p14);
+Serial pc(p28, p27);// serial monitoring
+Serial SIM800L(p13, p14);// pin delclearation
 unsigned int dist; //Distance variable declaration
 int a ;
 int b ;
