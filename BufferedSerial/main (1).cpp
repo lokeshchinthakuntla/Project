@@ -8,8 +8,8 @@
 HCSR04  usensor(p9,p10);//allocating the lpc pins for the ultrasonic sensor
 //rs, e, d4-d7 using lpc pins for interfacing with LCD16X2 to display required text on
 TextLCD lcd(p19, p20, p21, p22, p23, p24,TextLCD::LCD16x2);
-Serial pc(p13, p14);
-Serial SIM800L(p28, p27);
+Serial pc(p28, p27);
+Serial SIM800L(p13, p14);
 unsigned int dist; //Distance variable declaration
 int a ;
 int b ;
@@ -60,7 +60,7 @@ int main()
             SIM800L.printf("\r\n");
             wait(0.1f);
 
-            SIM800L.printf("Testing SMS from KC.");
+            SIM800L.printf("4410, keele street , M2N 2Y5, BIN4-10 Garbage bin- 70%");
             SIM800L.printf("\r\n");
             wait(0.1f);
             wait_ms(500);
