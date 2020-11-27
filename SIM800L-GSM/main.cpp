@@ -76,8 +76,7 @@ int main()
             sim.printf("\"\r");
             wait(0.1f);
             sim.printf("4410, keele street , M2N 2Y5, BIN4-10, garbage is getting full please change as soon as possible");
-            wait(0.1f);
-            //sim.putc(0x1A);  
+            wait(0.1f); 
             pc.printf("message sent");
             flag=1;
             //pc.printf("flag=%d",flag);
