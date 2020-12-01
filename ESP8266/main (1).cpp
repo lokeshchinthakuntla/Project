@@ -4,7 +4,6 @@
 #include "HCSR.h"
 #include <string>
 #include "ESP8266.h"               // Include header file from Author: Antonio Quevedo
-//#include "math.h"
 
 #define APIKEY OACI719X0K6W05TB    //Put "Write key" of your channel in thingspeak.com 
 #define IP "184.106.153.149"       // IP Address of "api.thingspeak.com\"
