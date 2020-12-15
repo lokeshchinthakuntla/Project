@@ -59,7 +59,7 @@ int main()
             pc.printf("garbage  : %ld%%\n",b);
             
             wait(15);        
-            strcpy(snd,"AT+CIPSTART=");// send command to GSM 
+            strcpy(snd,"AT+CIPSTART=");// send command to ESP 
             strcat(snd,"\"TCP\",\"");
             strcat(snd,IP);
             strcat(snd,"\",80");
