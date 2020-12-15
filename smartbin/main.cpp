@@ -60,12 +60,10 @@ int main()
             
             wait(15);        
             strcpy(snd,"AT+CIPSTART=");// send command to ESP 
-            strcat(snd,"\"TCP\",\"");
             strcat(snd,IP);
             
             esp.SendCMD(snd); 
-            pc.printf("S\r\n%s",snd);
-            //wait(2);                                                    
+            pc.printf("S\r\n%s",snd);                                                    
             esp.RcvReply(rcv, 1000);
             pc.printf("R\r\n%s",rcv);
             wait(1);
@@ -130,8 +128,7 @@ int main()
             sim.printf("\"\r");
             wait(0.1f);
             sim.printf("4410, keele street , M2N 2Y5, BIN4-10, garbage is getting full please change as soon as possible"); // Message
-            wait(0.1f);
-            sim.putc(0x1A);  
+            wait(0.1f);  
             pc.printf("message sent\n");
             flag=1;
             }
