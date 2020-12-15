@@ -69,31 +69,10 @@ int main()
             wait(1);
             
             sprintf(snd,"GET https://api.thingspeak.com/update?key=OACI719X0K6W05TB&field1=%d\r\n",b);
-           
-            int i=0;
-            for(i=0; snd[i]!='\0'; i++);
-            i++;
-            char cmd[255];
-
-            sprintf(cmd,"AT+CIPSEND=%d",i);       //Send Number of open connection and Characters to send
-            esp.SendCMD(cmd);
-            pc.printf("S\r\n%s",cmd);
-            while(i<=20 || rcv == ">") {
-                esp.RcvReply(rcv, 1000);
-                wait(100);
-                i++;
-            }
-            pc.printf("R\r\n%s",rcv);
 
             esp.SendCMD(snd);                     //Post value to thingspeak channel
             pc.printf("S\r\n%s",snd);
-
-            while(i<=20 || rcv == "OK") {
-                esp.RcvReply(rcv, 1000);
-                wait(100);
-                i++;
-            }
-            pc.printf("R\r\n%s",rcv);
+            
       
            
         }
