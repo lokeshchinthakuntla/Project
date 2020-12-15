@@ -62,7 +62,6 @@ int main()
             strcpy(snd,"AT+CIPSTART=");// send command to ESP 
             strcat(snd,"\"TCP\",\"");
             strcat(snd,IP);
-            strcat(snd,"\",80");
             
             esp.SendCMD(snd); 
             pc.printf("S\r\n%s",snd);
@@ -103,12 +102,11 @@ int main()
         
         
         
-        if(6< dist >=26) {         //Checks if measured distance is less than or equal to 30
+        if(12< dist >=26) {         //Checks if measured distance is less than or equal to 30
           
             flag=0;
             pc.printf("garbage  : %ld%%\n",b);
 
-           
         }
 
         if ( dist > 26 ) {
