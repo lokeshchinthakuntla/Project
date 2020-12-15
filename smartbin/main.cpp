@@ -100,9 +100,9 @@ int main()
             pc.printf("garbage  : %ld%%\n",b);
             
             if(flag==0){    
-            sim.printf("AT+CMGF=1\r");
+            sim.printf("AT+CMGF=1\r"); // configure in text mode
             wait(0.1f);
-            sim.printf("AT+CMGS=\"");
+            sim.printf("AT+CMGS=\"");  // to semd the SMS 
             sim.printf(PHONE_NUMBER);
             sim.printf("\"\r");
             wait(0.1f);
